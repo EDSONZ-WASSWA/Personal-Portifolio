@@ -6,11 +6,11 @@ import { useDarkMode } from '../../hooks/useDarkMode.js';
 import { Badge } from '../ui/Badge.jsx';
 
 const navLinks = [
-  { name: 'Home', path: '/' },
-  { name: 'About', path: '/about' },
-  { name: 'Projects', path: '/projects' },
-  { name: 'Skills', path: '/skills' },
-  { name: 'Contact', path: '/contact' },
+  { name: 'Home', path: '#home' },
+  { name: 'About', path: '#about' },
+  { name: 'Projects', path: '#projects' },
+  { name: 'Skills', path: '#skills' },
+  { name: 'Contact', path: '#contact' },
 ];
 
 export const Navbar = () => {
@@ -18,6 +18,16 @@ export const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDarkMode, toggleDarkMode] = useDarkMode();
   const location = useLocation();
+
+  const handleNavClick = (e, path) => {
+    e.preventDefault();
+    const targetId = path.replace('#', '');
+    const element = document.getElementById(targetId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMobileMenuOpen(false);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,10 +37,6 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [location]);
-
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-[0.67s] ${
       isScrolled 
@@ -38,36 +44,31 @@ export const Navbar = () => {
         : 'bg-transparent py-8'
     }`}>
       <div className="container-custom flex items-center justify-between">
-        <Link to="/" className="text-2xl font-display font-bold tracking-tighter">
+        <a href="#home" onClick={(e) => handleNavClick(e, '#home')} className="text-2xl font-display font-bold tracking-tighter">
           EDSON<span className="text-accent">.</span>
-        </Link>
+        </a>
 
         {/* Desktop Links */}
         <div className="hidden md:flex items-center gap-8">
           <div className="flex items-center gap-6">
             {navLinks.map((link) => (
-              <Link
+              <a
                 key={link.name}
-                to={link.path}
+                href={link.path}
+                onClick={(e) => handleNavClick(e, link.path)}
                 className="relative group text-sm font-mono uppercase tracking-widest overflow-hidden"
               >
                 <span className={`block transition-transform duration-300 ${
-                  location.pathname === link.path ? '-translate-y-full' : 'group-hover:-translate-y-full'
+                  location.hash === link.path ? '-translate-y-full' : 'group-hover:-translate-y-full'
                 }`}>
                   {link.name}
                 </span>
                 <span className={`absolute top-full left-0 block text-accent transition-transform duration-300 ${
-                  location.pathname === link.path ? '-translate-y-full' : 'group-hover:-translate-y-full'
+                  location.hash === link.path ? '-translate-y-full' : 'group-hover:-translate-y-full'
                 }`}>
                   {link.name}
                 </span>
-                {location.pathname === link.path && (
-                  <motion.div
-                    layoutId="activeNav"
-                    className="absolute -bottom-1 left-0 w-full h-px bg-accent"
-                  />
-                )}
-              </Link>
+              </a>
             ))}
           </div>
 
@@ -137,14 +138,15 @@ export const Navbar = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Link
-                  to={link.path}
+                <a
+                  href={link.path}
+                  onClick={(e) => handleNavClick(e, link.path)}
                   className={`text-4xl font-display font-bold ${
-                    location.pathname === link.path ? 'text-accent' : 'text-foreground'
+                    location.hash === link.path ? 'text-accent' : 'text-foreground'
                   }`}
                 >
                   {link.name}
-                </Link>
+                </a>
               </motion.div>
             ))}
           </motion.div>

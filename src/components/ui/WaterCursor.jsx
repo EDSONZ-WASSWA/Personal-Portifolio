@@ -7,6 +7,7 @@ import React, { useEffect, useRef } from 'react';
 const WaterCursor = () => {
   const canvasRef = useRef(null);
   const particles = useRef([]);
+  const ripples = useRef([]);
   const mouse = useRef({ x: 0, y: 0, lastX: 0, lastY: 0, speed: 0 });
   const requestRef = useRef();
 
@@ -56,20 +57,77 @@ const WaterCursor = () => {
         }
       }
 
+      // Occasional ripple on movement
+      if (speed > 15 && Math.random() > 0.9) {
+        ripples.current.push({
+          x: mouse.current.x,
+          y: mouse.current.y,
+          r: 0,
+          maxR: 20 + Math.random() * 30,
+          opacity: 0.3
+        });
+      }
+
       mouse.current.lastX = mouse.current.x;
       mouse.current.lastY = mouse.current.y;
     };
 
+    const handleClick = (e) => {
+      // Larger ripple on click
+      ripples.current.push({
+        x: e.clientX,
+        y: e.clientY,
+        r: 0,
+        maxR: 100,
+        opacity: 0.5
+      });
+      
+      // Burst of particles
+      for (let i = 0; i < 12; i++) {
+        particles.current.push({
+          x: e.clientX,
+          y: e.clientY,
+          vx: (Math.random() - 0.5) * 4,
+          vy: (Math.random() - 0.5) * 4,
+          radius: 4 + Math.random() * 6,
+          opacity: 0.8,
+          life: 1.0,
+          decay: 0.02 + Math.random() * 0.02,
+          wobble: Math.random() * Math.PI * 2,
+          wobbleSpeed: 0.1
+        });
+      }
+    };
+
     window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousedown', handleClick);
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw Ripples
+      for (let i = ripples.current.length - 1; i >= 0; i--) {
+        const r = ripples.current[i];
+        r.r += 2;
+        r.opacity -= 0.01;
+
+        if (r.opacity <= 0) {
+          ripples.current.splice(i, 1);
+          continue;
+        }
+
+        ctx.beginPath();
+        ctx.arc(r.x, r.y, r.r, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(245, 166, 35, ${r.opacity})`;
+        ctx.lineWidth = 2;
+        ctx.stroke();
+      }
 
       for (let i = particles.current.length - 1; i >= 0; i--) {
         const p = particles.current[i];
 
         // Physics & Animation
-        p.x += Math.sin(p.wobble) * 0.4;
+        p.x += Math.sin(p.wobble) * 0.4 + p.vx;
         p.wobble += p.wobbleSpeed;
         p.y += p.vy;
         p.vy += 0.05; // gravity acceleration
@@ -103,6 +161,7 @@ const WaterCursor = () => {
     return () => {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('mousedown', handleClick);
       if (requestRef.current) cancelAnimationFrame(requestRef.current);
     };
   }, []);
