@@ -10,13 +10,13 @@ export const aboutData = {
     "Right now my stack is React, TypeScript, and Java. But honestly, the technology is secondary to me. What I actually care about is writing code that the next developer — or future me at 2am — can actually understand. Clean architecture isn't a buzzword to me. It's just respect for your own future time.",
   ],
   funFacts: [
-    "Love exploring new technologies and contributing to open-source.",
-    "Avid Video Games player.",
-    "Passionate about sharing knowledge with the developer community.",
+    "I've spent more time than I'd like to admit trying to get a single pixel to align perfectly.",
+    "Gaming is my escape — mostly RTS and RPGs where I can over-engineer my strategies.",
+    "I actually enjoy reading documentation. Yes, I know how that sounds.",
   ],
   currently: {
-    workingOn: "Modern React Portfolio with Framer Motion",
-    reading: "Books of how to be an outstanding developer",
-    listeningTo: "Tech podcasts and 3D music while codding",
+    workingOn: "This very site. It's becoming an obsession.",
+    reading: "The Pragmatic Programmer (for the third time).",
+    listeningTo: "Lofi hip-hop or deep house. Anything without lyrics that lets me focus.",
   },
 };

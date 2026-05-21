@@ -13,13 +13,13 @@ function App() {
   const location = useLocation();
 
   useKonamiCode(() => {
-    alert("🚀 Easter Egg Found! You're awesome! Check the console for a surprise.");
+    alert("🚀 Nice one! You found the secret. I guess we're both nerds.");
     console.log(`
       %c EDSON WASSWA %c
-      %c Portfolio Redesign v2.0 %c
+      %c "Sometimes I write code that works." %c
       
-      You found the secret! 
-      Keep exploring.
+      You're deep in the source now. 
+      Respect the hustle.
     `, 
     'background: #f5a623; color: #0a0a0a; font-weight: bold; padding: 4px 8px;', 
     '', 
