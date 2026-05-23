@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { aboutData } from '../../data/about.js';
 import { experience } from '../../data/experience.js';
+import myPic from '../../assets/MY-PIC.jpg';
 
 export const About = () => {
   return (
@@ -41,7 +42,7 @@ export const About = () => {
               
               <div className="relative aspect-[4/5] bg-[#0a0a0a] border border-white/10 overflow-hidden">
                 <img 
-                  src="public/assets/MY-PIC.jpg" 
+                  src={myPic} 
                   alt={aboutData.name} 
                   className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-[1.12s] scale-110 group-hover:scale-100"
                 />
