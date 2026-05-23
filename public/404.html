@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edson Wasswa | Portfolio</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafgraph/spa-github-pages
+      // This script checks to see if a redirect is present in the query string
+      // and converts it back into the correct url and adds it to the
+      // browser's history using window.history.replaceState(...),
+      // which will cause the window to load the correct route for our SPA.
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    <script type="text/javascript">
+      // This script takes the current url and converts it into a query string
+      // that the script above can read and then redirect back to the correct
+      // url while keeping the history and the route.
+      var path = window.location.pathname;
+      var repo = "/personal_Web_Portifolio";
+      if (path.startsWith(repo)) {
+        var segment = path.slice(repo.length);
+        window.location.replace(
+          window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '') + repo + '/?/' + segment.replace(/&/g, '~and~') + (window.location.hash ? l.hash : '')
+        );
+      }
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
