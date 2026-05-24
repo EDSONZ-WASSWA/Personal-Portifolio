@@ -26,11 +26,11 @@
       // that the script above can read and then redirect back to the correct
       // url while keeping the history and the route.
       var path = window.location.pathname;
-      var repo = "/personal_Web_Portifolio";
+      var repo = "/Personal-Portifolio";
       if (path.startsWith(repo)) {
         var segment = path.slice(repo.length);
         window.location.replace(
-          window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '') + repo + '/?/' + segment.replace(/&/g, '~and~') + (window.location.hash ? l.hash : '')
+          window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '') + repo + '/?/' + segment.replace(/&/g, '~and~') + (window.location.hash ? window.location.hash : '')
         );
       }
     </script>
