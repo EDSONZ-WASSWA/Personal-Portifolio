@@ -61,10 +61,15 @@ class ErrorBoundary extends React.Component {
   }
 }
 
+// Handle basename robustly for GitHub Pages
+const basename = import.meta.env.BASE_URL?.endsWith('/') 
+  ? import.meta.env.BASE_URL.slice(0, -1) 
+  : import.meta.env.BASE_URL;
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ErrorBoundary>
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <BrowserRouter basename={basename || "/"}>
         <App />
       </BrowserRouter>
     </ErrorBoundary>
