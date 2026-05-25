@@ -1,25 +1,39 @@
-import digitoMarketing from '../assets/digito-marketing.jpg';
-import appDev from '../assets/App-Dev.jpg';
+
+
+import { image } from 'framer-motion/client';
+import kitoma from '../assets/kit_pic.png'
+import acc from '../assets/kitomaSDA.png'
+import rcsn from '../assets/rcsn.png'
 
 export const projects = [
   {
     id: 1,
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution built with React and Java Spring Boot. Features include user authentication, product catalog, shopping cart, and secure checkout integration.",
-    image: digitoMarketing,
-    tags: ["React", "Java", "TypeScript", "JavaScript", "Python"],
+    title: "Account Management System",
+    description: "Full-stack Account management system, a solution built with React and python. Features include tracking Cash Inflows, cash outflows, generates graph and reports for all entities.",
+    image: acc,
+    tags: ["React", "TypeScript", "SQL", "Python"],
     liveUrl: "https://github.com/EDSONZ-WASSWA",
-    githubUrl: "https://github.com/EDSONZ-WASSWA",
+    githubUrl: "https://github.com/EDSONZ-WASSWA/Kitoma-Secondary-School",
     featured: true,
   },
   {
     id: 2,
-    title: "Task Management App",
-    description: "Collaborative task management tool with real-time updates. Designed for teams to manage projects efficiently with features like drag-and-drop tasks, subtasks, and deadlines.",
-    image: appDev,
-    tags: ["JavaScript", "React", "Node.js"],
+    title: "School Management System",
+    "description": "A collaborative school management system built for high-level administration. Streamlines daily school activities including real-time enrollment analytics, quick action workflows, examination grading, and automated notice boards.",
+    image: rcsn,
+    tags: ["Java" ,"SQL","Maven","CSS"],
     liveUrl: "https://github.com/EDSONZ-WASSWA",
-    githubUrl: "https://github.com/EDSONZ-WASSWA",
+    githubUrl: "https://github.com/EDSONZ-WASSWA/SCHOOL-MANAGEMENT",
     featured: true,
   },
+  {
+    id:3,
+    title: "School Website",
+    description: "The School needed an online platform that would market the school, It shows current afairs of the school, openning and closing of the term, It has a gallery that shows diferent school activities taking place",
+    image: kitoma,
+    tags: ["Html","CSS","JavaScript"],
+    liveUrl: "https://edsonz-wasswa.github.io/kitomasda/",
+    githubUrl: "https://github.com/EDSONZ-WASSWA/kitomasda",
+    featured: true
+  }
 ];
