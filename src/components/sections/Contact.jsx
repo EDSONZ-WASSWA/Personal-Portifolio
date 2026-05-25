@@ -144,7 +144,7 @@ export const Contact = () => {
                     className="w-full bg-white/[0.03] border-b border-white/10 py-4 px-1 focus:border-accent outline-none transition-all duration-500 font-body text-lg"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="John Doe"
+                    placeholder="YourName...."
                   />
                 </div>
                 <div className="space-y-4">
@@ -157,7 +157,7 @@ export const Contact = () => {
                     className="w-full bg-white/[0.03] border-b border-white/10 py-4 px-1 focus:border-accent outline-none transition-all duration-500 font-body text-lg"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="john@example.com"
+                    placeholder="yourname@gmail.com"
                   />
                 </div>
               </div>
@@ -208,7 +208,7 @@ export const Contact = () => {
                   animate={{ opacity: 1, y: 0 }}
                   className="text-center text-xs text-accent font-mono uppercase tracking-widest mt-6"
                 >
-                  Thanks! I'll get back to you soon.
+                  Thanks! Edson will get back to you soon.
                 </motion.p>
               )}
 
