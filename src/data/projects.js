@@ -2,7 +2,7 @@
 
 import { image } from 'framer-motion/client';
 import kitoma from '../assets/kit_pic.png'
-import acc from '../assets/kitomaSDA.png'
+import acc from '../assets/KitomaSDA.png'
 import rcsn from '../assets/rcsn.png'
 
 export const projects = [
