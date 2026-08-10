@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '../ui/Button.jsx';
 import { aboutData } from '../../data/about.js';
+import developerWorkspaceVideo from '../../assets/developer-workspace.mp4';
+import developerWorkspacePoster from '../../assets/developer-workspace-poster.png';
 
 export const Hero = () => {
   const containerVariants = {
@@ -47,6 +49,27 @@ export const Hero = () => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-start overflow-hidden py-20">
+      {/* Cinematic background: the poster remains visible for reduced-motion users. */}
+      <div className="hero-background" aria-hidden="true">
+        <img
+          src={developerWorkspacePoster}
+          alt=""
+          className="hero-background-poster"
+        />
+        <video
+          className="hero-background-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={developerWorkspacePoster}
+        >
+          <source src={developerWorkspaceVideo} type="video/mp4" />
+        </video>
+        <div className="hero-background-scrim" />
+      </div>
+
       {/* Background Geometric Elements (CSS Only) */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/4 right-[-5%] w-96 h-96 border border-accent/10 rounded-full animate-[spin_23.45s_linear_infinite]" />
@@ -124,7 +147,7 @@ export const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 2.12, duration: 1.34 }}
-        className="absolute bottom-12 right-12 md:right-24 flex flex-col items-center gap-6"
+        className="absolute bottom-12 right-12 md:right-24 z-10 flex flex-col items-center gap-6"
       >
         <span className="text-[10px] font-mono uppercase tracking-[0.5em] rotate-90 origin-left translate-x-1/2 opacity-30">Scroll</span>
         <div className="w-px h-16 bg-gradient-to-b from-accent/50 to-transparent" />
