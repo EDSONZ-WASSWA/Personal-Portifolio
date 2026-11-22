@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Hero } from '../components/sections/Hero.jsx';
 import { About } from '../components/sections/About.jsx';
 import { Projects } from '../components/sections/Projects.jsx';
+import { GitHub } from '../components/sections/GitHub.jsx';
 import { Skills } from '../components/sections/Skills.jsx';
 import { Contact } from '../components/sections/Contact.jsx';
 
@@ -25,6 +26,7 @@ export const Home = () => {
 
       <About />
       <Projects />
+      <GitHub />
       <Skills />
       <Contact />
     </motion.div>

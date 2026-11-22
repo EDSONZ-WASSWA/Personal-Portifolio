@@ -76,8 +76,8 @@ export const Projects = () => {
 
                 {/* Project Details - Glassmorphism Card */}
                 <div className={`w-full lg:w-[48%] z-10 p-10 md:p-14 
-                  bg-[#0a0a0a]/80 backdrop-blur-[24px] border border-white/[0.1] 
-                  shadow-[0_20px_50px_rgba(0,0,0,0.5)] 
+                  bg-background/80 backdrop-blur-[24px] border border-foreground/10 
+                  shadow-(--shadow-card-lg) 
                   group-hover:border-accent/40 
                   transition-all duration-[0.88s] flex flex-col justify-center
                   relative
@@ -102,11 +102,11 @@ export const Projects = () => {
                   
                   <div className="flex flex-wrap gap-3 mb-12">
                     {project.tags.map(tag => (
-                      <Badge key={tag} variant="outline" className="bg-white/[0.03] border-white/10 text-[10px] uppercase tracking-wider">{tag}</Badge>
+                      <Badge key={tag} variant="outline" className="bg-foreground/[0.03] border-foreground/10 text-[10px] uppercase tracking-wider">{tag}</Badge>
                     ))}
                   </div>
 
-                  <div className="flex gap-12 mt-auto pt-8 border-t border-white/5">
+                  <div className="flex gap-12 mt-auto pt-8 border-t border-foreground/5">
                     <a 
                       href={project.githubUrl} 
                       target="_blank"

@@ -9,6 +9,7 @@ const navLinks = [
   { name: 'Home', path: '#home' },
   { name: 'About', path: '#about' },
   { name: 'Projects', path: '#projects' },
+  { name: 'GitHub', path: '#github' },
   { name: 'Skills', path: '#skills' },
   { name: 'Contact', path: '#contact' },
 ];
@@ -40,7 +41,7 @@ export const Navbar = () => {
   return (
     <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-[0.67s] ${
       isScrolled 
-        ? 'bg-[#0a0a0a]/40 backdrop-blur-[20px] saturate-[180%] border-b border-accent/10 py-4' 
+        ? 'bg-background/40 backdrop-blur-[20px] saturate-[180%] border-b border-accent/10 py-4' 
         : 'bg-transparent py-8'
     }`}>
       <div className="container-custom flex items-center justify-between">
@@ -129,7 +130,7 @@ export const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.43, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 top-0 left-0 w-full h-screen bg-[#0a0a0a]/85 backdrop-blur-[24px] z-40 flex flex-col items-center justify-center gap-8 md:hidden"
+            className="fixed inset-0 top-0 left-0 w-full h-screen bg-background/85 backdrop-blur-[24px] z-40 flex flex-col items-center justify-center gap-8 md:hidden"
           >
             {navLinks.map((link, index) => (
               <motion.div

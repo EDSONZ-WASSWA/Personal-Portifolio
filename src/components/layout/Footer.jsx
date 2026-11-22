@@ -8,7 +8,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="relative py-24 border-t border-white/5 bg-background overflow-hidden">
+    <footer className="relative py-24 border-t border-foreground/5 bg-background overflow-hidden">
       {/* Handcrafted Micro-detail: Slightly off-center rotated element */}
       <div className="absolute -bottom-12 -right-12 w-48 h-48 border border-accent/5 rotate-[15deg] pointer-events-none select-none flex items-center justify-center opacity-40">
         <span className="text-[10px] font-mono uppercase tracking-[1em] text-accent/20 rotate-[-15deg]">Handcrafted</span>
