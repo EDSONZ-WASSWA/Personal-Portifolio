@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { aboutData } from '../../data/about.js';
 import { experience } from '../../data/experience.js';
 import myPic from '../../assets/MY-PIC.jpg';
+import zzimbaLogo from '../../assets/zzimbaLogo.png';
 
 export const About = () => {
   return (
@@ -104,8 +105,15 @@ export const About = () => {
                 <h4 className="text-[10px] font-mono uppercase tracking-widest text-accent mb-6">Current vibe</h4>
                 <div className="space-y-5 text-xs text-foreground/50 leading-relaxed">
                   <p><span className="text-foreground/20 mr-2 uppercase">Building:</span> {aboutData.currently.workingOn}</p>
-                  <p><span className="text-foreground/20 mr-2 uppercase">Reading:</span> {aboutData.currently.reading}</p>
-                  <p><span className="text-foreground/20 mr-2 uppercase">Audio:</span> {aboutData.currently.listeningTo}</p>
+                  <p><span className="text-foreground/20 mr-2 uppercase">About:</span> {aboutData.currently.description}</p>
+                  <p><span className="text-foreground/20 mr-2 uppercase">Role:</span> {aboutData.currently.role}</p>
+                </div>
+                <div className="mt-6 w-28 h-10 bg-white overflow-hidden">
+                  <img
+                    src={zzimbaLogo}
+                    alt="ZzimbaSmart logo"
+                    className="w-full h-full object-cover scale-110"
+                  />
                 </div>
               </div>
             </div>

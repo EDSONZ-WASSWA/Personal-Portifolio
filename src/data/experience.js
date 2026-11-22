@@ -1,5 +1,11 @@
 export const experience = [
   {
+    year: "2026 - Present",
+    role: "MRS Maintainer & IT consultant ",
+    company: "Salcedo Doctors Hospital (SDH)",
+    description: "Maintaining and supporting the OpenMRS system at SDH, ensuring smooth operations and addressing technical issues."
+  },
+  {
     year: "2024 - Present",
     role: "Full Stack Developer",
     company: "Freelance / Opensource Contributor",
