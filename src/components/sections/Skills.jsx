@@ -30,13 +30,13 @@ export const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.88, delay: catIndex * 0.12 }}
-              className={`p-10 md:p-14 bg-white/[0.03] backdrop-blur-[12px] border border-white/[0.08] shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:border-accent/30 transition-all duration-[0.88s] group ${
+              className={`p-10 md:p-14 bg-foreground/[0.03] backdrop-blur-[12px] border border-foreground/10 shadow-(--shadow-card) hover:border-accent/30 transition-all duration-[0.88s] group ${
                 catIndex % 2 === 0 ? 'lg:translate-y-8' : 'lg:-translate-y-8'
               }`}
             >
               <div className="flex items-center gap-4 mb-12">
                 <h4 className="text-[10px] font-mono uppercase tracking-[0.4em] text-accent/60">{category.title}</h4>
-                <div className="h-px flex-1 bg-white/5 group-hover:bg-accent/20 transition-colors duration-[0.88s]" />
+                <div className="h-px flex-1 bg-foreground/5 group-hover:bg-accent/20 transition-colors duration-[0.88s]" />
               </div>
               
               <div className="flex flex-wrap gap-4 mb-12">
@@ -48,7 +48,7 @@ export const Skills = () => {
                   >
                     <Badge 
                       variant={skill.status === 'Learning' ? 'live' : 'default'}
-                      className="text-[10px] py-3 px-6 bg-white/[0.02] border-white/5 hover:border-accent/30 hover:bg-accent/5 transition-all uppercase tracking-widest gap-3"
+                      className="text-[10px] py-3 px-6 bg-foreground/[0.02] border-foreground/5 hover:border-accent/30 hover:bg-accent/5 transition-all uppercase tracking-widest gap-3"
                     >
                       {skill.icon && <i className={`${skill.icon} text-sm opacity-70 group-hover:opacity-100 transition-opacity`} />}
                       {skill.name}
@@ -58,7 +58,7 @@ export const Skills = () => {
               </div>
               
               {category.title === "Professional Skills" && (
-                <div className="mt-16 space-y-12 border-t border-white/5 pt-12">
+                <div className="mt-16 space-y-12 border-t border-foreground/5 pt-12">
                   {category.skills.map((skill) => (
                     <div key={skill.name} className="group/skill relative pl-10">
                       <div className="absolute left-0 top-1 w-2 h-2 bg-accent/20 group-hover/skill:bg-accent transition-all duration-500 group-hover/skill:scale-150" />

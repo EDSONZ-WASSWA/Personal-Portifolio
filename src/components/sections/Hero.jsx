@@ -48,7 +48,7 @@ export const Hero = () => {
   const name = aboutData.name;
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-start overflow-hidden py-20">
+    <section id="home" className="relative min-h-screen flex items-center justify-start overflow-hidden py-20" style={{ '--foreground': '#f0ede8' }}>
       {/* Cinematic background: the poster remains visible for reduced-motion users. */}
       <div className="hero-background" aria-hidden="true">
         <img

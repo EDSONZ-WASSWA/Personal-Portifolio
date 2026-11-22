@@ -80,7 +80,7 @@ export const Contact = () => {
 
             <div className="space-y-8 mb-16">
               <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 flex items-center justify-center bg-white/[0.03] backdrop-blur-[8px] border border-white/[0.08] group-hover:border-accent/50 group-hover:text-accent transition-all duration-[0.45s]">
+                <div className="w-14 h-14 flex items-center justify-center bg-foreground/[0.03] backdrop-blur-[8px] border border-foreground/10 group-hover:border-accent/50 group-hover:text-accent transition-all duration-[0.45s]">
                   <Mail size={20} />
                 </div>
                 <div>
@@ -89,7 +89,7 @@ export const Contact = () => {
                 </div>
               </div>
               <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 flex items-center justify-center bg-white/[0.03] backdrop-blur-[8px] border border-white/[0.08] group-hover:border-accent/50 group-hover:text-accent transition-all duration-[0.45s]">
+                <div className="w-14 h-14 flex items-center justify-center bg-foreground/[0.03] backdrop-blur-[8px] border border-foreground/10 group-hover:border-accent/50 group-hover:text-accent transition-all duration-[0.45s]">
                   <Phone size={20} />
                 </div>
                 <div>
@@ -98,7 +98,7 @@ export const Contact = () => {
                 </div>
               </div>
               <div className="flex items-center gap-6 group">
-                <div className="w-14 h-14 flex items-center justify-center bg-white/[0.03] backdrop-blur-[8px] border border-white/[0.08] group-hover:border-accent/50 group-hover:text-accent transition-all duration-[0.45s]">
+                <div className="w-14 h-14 flex items-center justify-center bg-foreground/[0.03] backdrop-blur-[8px] border border-foreground/10 group-hover:border-accent/50 group-hover:text-accent transition-all duration-[0.45s]">
                   <MapPin size={20} />
                 </div>
                 <div>
@@ -109,13 +109,13 @@ export const Contact = () => {
             </div>
 
             <div className="flex gap-4">
-              <a href="https://github.com/EDSONZ-WASSWA" target="_blank" rel="noopener noreferrer" className="w-14 h-14 flex items-center justify-center bg-white/[0.03] border border-white/[0.08] hover:border-accent/50 hover:text-accent hover:-translate-y-1 transition-all duration-[0.34s]">
+              <a href="https://github.com/EDSONZ-WASSWA" target="_blank" rel="noopener noreferrer" className="w-14 h-14 flex items-center justify-center bg-foreground/[0.03] border border-foreground/10 hover:border-accent/50 hover:text-accent hover:-translate-y-1 transition-all duration-[0.34s]">
                 <Github size={20} />
               </a>
-              <a href="https://www.linkedin.com/in/wasswa-edson-493a80360/" target="_blank" rel="noopener noreferrer" className="w-14 h-14 flex items-center justify-center bg-white/[0.03] border border-white/[0.08] hover:border-accent/50 hover:text-accent hover:-translate-y-1 transition-all duration-[0.34s]">
+              <a href="https://www.linkedin.com/in/wasswa-edson-493a80360/" target="_blank" rel="noopener noreferrer" className="w-14 h-14 flex items-center justify-center bg-foreground/[0.03] border border-foreground/10 hover:border-accent/50 hover:text-accent hover:-translate-y-1 transition-all duration-[0.34s]">
                 <Linkedin size={20} />
               </a>
-              <a href="mailto:edsonwasswa54@gmail.com" className="w-14 h-14 flex items-center justify-center bg-white/[0.03] border border-white/[0.08] hover:border-accent/50 hover:text-accent hover:-translate-y-1 transition-all duration-[0.34s]">
+              <a href="mailto:edsonwasswa54@gmail.com" className="w-14 h-14 flex items-center justify-center bg-foreground/[0.03] border border-foreground/10 hover:border-accent/50 hover:text-accent hover:-translate-y-1 transition-all duration-[0.34s]">
                 <MessageSquare size={20} />
               </a>
             </div>
@@ -127,7 +127,7 @@ export const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.88 }}
-            className="p-10 md:p-16 bg-[#0a0a0a]/40 backdrop-blur-[24px] border border-white/[0.08] shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden"
+            className="p-10 md:p-16 bg-background/40 backdrop-blur-[24px] border border-foreground/10 shadow-(--shadow-card-lg) relative overflow-hidden"
           >
             {/* Subtle Gradient Glow */}
             <div className="absolute -top-24 -right-24 w-48 h-48 bg-accent/5 blur-[100px] pointer-events-none" />
@@ -141,7 +141,7 @@ export const Contact = () => {
                     id="name"
                     name="from_name"
                     required
-                    className="w-full bg-white/[0.03] border-b border-white/10 py-4 px-1 focus:border-accent outline-none transition-all duration-500 font-body text-lg"
+                    className="w-full bg-foreground/[0.03] border-b border-foreground/10 py-4 px-1 focus:border-accent outline-none transition-all duration-500 font-body text-lg"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="YourName...."
@@ -154,7 +154,7 @@ export const Contact = () => {
                     id="email"
                     name="email"
                     required
-                    className="w-full bg-white/[0.03] border-b border-white/10 py-4 px-1 focus:border-accent outline-none transition-all duration-500 font-body text-lg"
+                    className="w-full bg-foreground/[0.03] border-b border-foreground/10 py-4 px-1 focus:border-accent outline-none transition-all duration-500 font-body text-lg"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="yourname@gmail.com"
@@ -169,7 +169,7 @@ export const Contact = () => {
                   id="subject"
                   name="subject"
                   required
-                  className="w-full bg-white/[0.03] border-b border-white/10 py-4 px-1 focus:border-accent outline-none transition-all duration-500 font-body text-lg"
+                  className="w-full bg-foreground/[0.03] border-b border-foreground/10 py-4 px-1 focus:border-accent outline-none transition-all duration-500 font-body text-lg"
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                   placeholder="Project Inquiry"
@@ -183,7 +183,7 @@ export const Contact = () => {
                   name="message"
                   required
                   rows="4"
-                  className="w-full bg-white/[0.03] border-b border-white/10 py-4 px-1 focus:border-accent outline-none transition-all duration-500 font-body text-lg resize-none"
+                  className="w-full bg-foreground/[0.03] border-b border-foreground/10 py-4 px-1 focus:border-accent outline-none transition-all duration-500 font-body text-lg resize-none"
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Tell me about your project..."
@@ -199,7 +199,7 @@ export const Contact = () => {
                 <span className="relative z-10">
                   {status === 'sending' ? 'Transmitting...' : status === 'success' ? 'Message Received' : status === 'error' ? 'Transmission Failed' : 'Send Message'}
                 </span>
-                <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-foreground/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
               </Button>
 
               {status === 'success' && (

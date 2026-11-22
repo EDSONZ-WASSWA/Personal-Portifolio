@@ -38,7 +38,7 @@ export const ProjectDetail = () => {
             className="relative group"
           >
             <div className="absolute -inset-4 border border-accent/20 translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-[1.12s] ease-[0.16,1,0.3,1]" />
-            <div className="relative aspect-video lg:aspect-square bg-[#0a0a0a] border border-white/10 overflow-hidden">
+            <div className="relative aspect-video lg:aspect-square bg-foreground/5 border border-foreground/10 overflow-hidden">
               <img src={project.image} alt={project.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-[1.12s]" />
             </div>
           </motion.div>
@@ -57,7 +57,7 @@ export const ProjectDetail = () => {
               {project.title}<span className="text-accent">.</span>
             </h1>
             
-            <div className="p-10 md:p-14 bg-white/[0.03] backdrop-blur-[24px] border border-white/[0.08] mb-12 relative overflow-hidden group">
+            <div className="p-10 md:p-14 bg-foreground/[0.03] backdrop-blur-[24px] border border-foreground/10 mb-12 relative overflow-hidden group">
               <div className="absolute top-0 right-0 w-12 h-12 border-t border-r border-accent/20 group-hover:border-accent/50 transition-colors duration-[0.88s]" />
               <p className="text-foreground/70 text-xl italic leading-relaxed font-body">
                 "{project.description}"
@@ -66,11 +66,11 @@ export const ProjectDetail = () => {
             
             <div className="flex flex-wrap gap-3 mb-16">
               {project.tags.map(tag => (
-                <span key={tag} className="px-6 py-3 bg-white/[0.02] border border-white/10 text-[10px] font-mono uppercase tracking-widest text-foreground/50">{tag}</span>
+                <span key={tag} className="px-6 py-3 bg-foreground/[0.02] border border-foreground/10 text-[10px] font-mono uppercase tracking-widest text-foreground/50">{tag}</span>
               ))}
             </div>
 
-            <div className="flex gap-12 pt-12 border-t border-white/5">
+            <div className="flex gap-12 pt-12 border-t border-foreground/5">
               <a 
                 href={project.githubUrl} 
                 target="_blank"

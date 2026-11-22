@@ -40,7 +40,7 @@ export const About = () => {
               {/* Refined Border Offset */}
               <div className="absolute -inset-4 border border-accent/20 translate-x-4 translate-y-4 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-[1.12s] ease-[0.16,1,0.3,1]" />
               
-              <div className="relative aspect-[4/5] bg-[#0a0a0a] border border-white/10 overflow-hidden">
+              <div className="relative aspect-[4/5] bg-foreground/5 border border-foreground/10 overflow-hidden">
                 <img 
                   src={myPic} 
                   alt={aboutData.name} 
@@ -51,19 +51,19 @@ export const About = () => {
             </div>
 
             <div className="mt-20 grid grid-cols-2 gap-4 font-mono text-[9px] uppercase tracking-[0.3em]">
-              <div className="bg-white/[0.03] p-8 border border-white/[0.05] flex flex-col justify-between aspect-square">
+              <div className="bg-foreground/[0.03] p-8 border border-foreground/5 flex flex-col justify-between aspect-square">
                 <p className="text-foreground/20">Location</p>
                 <p className="text-accent/90 font-bold">{aboutData.location}</p>
               </div>
-              <div className="bg-white/[0.03] p-8 border border-white/[0.05] flex flex-col justify-between aspect-square">
+              <div className="bg-foreground/[0.03] p-8 border border-foreground/5 flex flex-col justify-between aspect-square">
                 <p className="text-foreground/20">Experience</p>
                 <p className="text-accent/90 font-bold">{aboutData.experience}</p>
               </div>
-              <div className="bg-white/[0.03] p-8 border border-white/[0.05] flex flex-col justify-between aspect-square">
+              <div className="bg-foreground/[0.03] p-8 border border-foreground/5 flex flex-col justify-between aspect-square">
                 <p className="text-foreground/20">Background</p>
                 <p className="text-accent/90 font-bold">Software Eng.</p>
               </div>
-              <div className="bg-white/[0.03] p-8 border border-white/[0.05] flex flex-col justify-between aspect-square">
+              <div className="bg-foreground/[0.03] p-8 border border-foreground/5 flex flex-col justify-between aspect-square">
                 <p className="text-foreground/20">Status</p>
                 <div className="flex items-center gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
@@ -89,7 +89,7 @@ export const About = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20">
-              <div className="p-8 bg-white/[0.02] border-l-2 border-accent/20">
+              <div className="p-8 bg-foreground/[0.02] border-l-2 border-accent/20">
                 <h4 className="text-[10px] font-mono uppercase tracking-widest text-accent mb-6">Fun facts</h4>
                 <ul className="space-y-4">
                   {aboutData.funFacts.map((fact, index) => (
@@ -100,7 +100,7 @@ export const About = () => {
                   ))}
                 </ul>
               </div>
-              <div className="p-8 bg-white/[0.02] border-l-2 border-accent/20">
+              <div className="p-8 bg-foreground/[0.02] border-l-2 border-accent/20">
                 <h4 className="text-[10px] font-mono uppercase tracking-widest text-accent mb-6">Current vibe</h4>
                 <div className="space-y-5 text-xs text-foreground/50 leading-relaxed">
                   <p><span className="text-foreground/20 mr-2 uppercase">Building:</span> {aboutData.currently.workingOn}</p>
@@ -112,13 +112,13 @@ export const About = () => {
 
             <h4 className="text-[10px] font-mono uppercase tracking-widest text-accent mb-12 flex items-center gap-4">
               <span>The journey so far</span>
-              <div className="flex-1 h-px bg-white/5" />
+              <div className="flex-1 h-px bg-foreground/5" />
             </h4>
             <div className="space-y-16">
               {experience.map((item, index) => (
                 <div key={index} className="relative pl-12 group">
-                  <div className="absolute top-0 left-0 w-px h-full bg-white/5 group-hover:bg-accent/20 transition-colors" />
-                  <div className="absolute top-0 left-[-4px] w-2 h-2 bg-white/10 rounded-full group-hover:bg-accent transition-all duration-[0.45s] group-hover:scale-150" />
+                  <div className="absolute top-0 left-0 w-px h-full bg-foreground/5 group-hover:bg-accent/20 transition-colors" />
+                  <div className="absolute top-0 left-[-4px] w-2 h-2 bg-foreground/10 rounded-full group-hover:bg-accent transition-all duration-[0.45s] group-hover:scale-150" />
                   <p className="text-[10px] font-mono text-foreground/30 mb-3 uppercase tracking-widest">{item.year}</p>
                   <h5 className="text-2xl font-display font-bold mb-2 tracking-tight">{item.role}</h5>
                   <p className="text-xs text-accent/60 mb-6 uppercase tracking-widest font-mono">{item.company}</p>

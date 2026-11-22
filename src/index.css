@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Syne:wght@400..800&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 @import "tailwindcss";
 
-@theme {
-  --color-background: #0a0a0a;
-  --color-foreground: #f0ede8;
-  --color-accent: #f5a623;
-  --color-accent-muted: rgba(245, 166, 35, 0.1);
-  
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-muted: var(--accent-muted);
+
   --font-display: "Playfair Display", serif;
   --font-body: "Syne", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
@@ -14,20 +16,23 @@
 
 @layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #f0ede8;
-    --accent: #f5a623;
+    color-scheme: light;
+    --background: #f0ede8;
+    --foreground: #161310;
+    --accent: #b45309;
+    --accent-muted: rgba(180, 83, 9, 0.12);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.08);
+    --shadow-card-lg: 0 20px 50px rgba(0, 0, 0, 0.12);
   }
 
   .dark {
+    color-scheme: dark;
     --background: #0a0a0a;
     --foreground: #f0ede8;
-  }
-
-  /* Light mode fallback or toggle */
-  :root:not(.dark) {
-    --background: #f0ede8;
-    --foreground: #0a0a0a;
+    --accent: #f5a623;
+    --accent-muted: rgba(245, 166, 35, 0.1);
+    --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-card-lg: 0 20px 50px rgba(0, 0, 0, 0.5);
   }
 
   body {
