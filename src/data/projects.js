@@ -4,6 +4,7 @@ import { image } from 'framer-motion/client';
 import kitoma from '../assets/kit_pic.png'
 import acc from '../assets/KitomaSDA.png'
 import rcsn from '../assets/rcsn.png'
+import zzimba from '../assets/ZzimbaSmart.png'
 
 export const projects = [
   {
@@ -34,6 +35,16 @@ export const projects = [
     tags: ["Html","CSS","JavaScript"],
     liveUrl: "https://edsonz-wasswa.github.io/kitomasda/",
     githubUrl: "https://github.com/EDSONZ-WASSWA/kitomasda",
+    featured: true
+  },
+  {
+    id: 4,
+    title: "ZzimbaSmart",
+    description: "An Online platform designed to bring together all the parties involved in construction",
+    image: zzimba,
+    tags: ["Python","React","JavaScript"],
+    liveUrl: "https://zzimbasmart.com/",
+    githubUrl: "https://github.com/ZzimbaEasy",
     featured: true
   }
 ];
